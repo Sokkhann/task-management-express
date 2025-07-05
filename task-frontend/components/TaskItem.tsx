@@ -1,4 +1,6 @@
-import { Task } from "../type/task";
+import { Task } from "@/type/task";
+import { PenLine, X } from "lucide-react";
+
 
 interface Props {
   task: Task;
@@ -9,10 +11,10 @@ interface Props {
 
 export default function TaskItem({ task, onToggle, onDelete, onUpdate }: Props) {
   return (
-    <li className="flex justify-between items-center border p-2 rounded">
+    <li className="flex justify-between items-center border-[#154734] border p-2 rounded">
       <span
         className={`cursor-pointer ${
-          task.done ? "line-through text-gray-400" : ""
+          task.done ? "line-through text-[#154734]" : ""
         }`}
         onClick={() => onToggle(task)}
       >
@@ -23,9 +25,9 @@ export default function TaskItem({ task, onToggle, onDelete, onUpdate }: Props) 
           onClick={() => {
             onDelete(task._id);
           }}
-          className="text-red-500"
+          className="text-[#5D3A1A]"
         >
-          ❌
+          <X />
         </button>
         <button
           onClick={() => {
@@ -34,9 +36,9 @@ export default function TaskItem({ task, onToggle, onDelete, onUpdate }: Props) 
               onUpdate(task, newTitle.trim());
             }
           }}
-          className="text-blue-500"
+          className="text-[#154734]"
         >
-          ✏️
+          <PenLine />
         </button>
       </div>
     </li>

@@ -21,9 +21,9 @@ export default function TaskForm({ onAdd }: Props) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Enter task"
-        className="flex-1 border px-3 py-2 rounded"
+        className="flex-1 border border-[#154734] px-3 py-2 rounded"
       />
-      <button onClick={handleSubmit} className="bg-blue-500 text-white px-4 rounded">
+      <button onClick={handleSubmit} className="bg-[#5D3A1A] text-[#D2A94C] font-bold px-4 rounded">
         Add
       </button>
     </div>
